@@ -1,340 +1,404 @@
-[![Formatting](https://github.com/microsoft/DeepSpeed-MII/actions/workflows/formatting.yml/badge.svg?branch=main)](https://github.com/microsoft/DeepSpeed-MII/actions/workflows/formatting.yml)
-[![nv-v100-legacy](https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-v100-legacy.yml/badge.svg?branch=main)](https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-v100-legacy.yml)
-[![nv-a6000-fastgen](https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-a6000-fastgen.yml/badge.svg?branch=main)](https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-a6000-fastgen.yml)
-[![License Apache 2.0](https://badgen.net/badge/license/apache2.0/blue)](https://github.com/Microsoft/DeepSpeed/blob/master/LICENSE)
-[![PyPI version](https://badge.fury.io/py/deepspeed-mii.svg)](https://pypi.org/project/deepspeed-mii/)
-<!-- [![Documentation Status](https://readthedocs.org/projects/deepspeed/badge/?version=latest)](https://deepspeed.readthedocs.io/en/latest/?badge=latest) -->
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><p dir="auto"><a href="https://github.com/microsoft/DeepSpeed-MII/actions/workflows/formatting.yml"><img src="https://github.com/microsoft/DeepSpeed-MII/actions/workflows/formatting.yml/badge.svg?branch=main" alt="格式化" style="max-width: 100%;"></a>
+<a href="https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-v100-legacy.yml"><img src="https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-v100-legacy.yml/badge.svg?branch=main" alt="NV-V100-旧版" style="max-width: 100%;"></a>
+<a href="https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-a6000-fastgen.yml"><img src="https://github.com/microsoft/DeepSpeed-MII/actions/workflows/nv-a6000-fastgen.yml/badge.svg?branch=main" alt="NV-A6000-fastgen" style="max-width: 100%;"></a>
+<a href="https://github.com/Microsoft/DeepSpeed/blob/master/LICENSE"><img src="https://camo.githubusercontent.com/ebfafd1841074b30d0bbf188b3444cdc32288f38e475d583e2c4b1c5c8475eca/68747470733a2f2f62616467656e2e6e65742f62616467652f6c6963656e73652f617061636865322e302f626c7565" alt="许可证 Apache 2.0" data-canonical-src="https://badgen.net/badge/license/apache2.0/blue" style="max-width: 100%;"></a>
+<a href="https://pypi.org/project/deepspeed-mii/" rel="nofollow"><img src="https://camo.githubusercontent.com/51e6dc651fab578df9699d0b851268a4ac7ce38d135ccf9e9d96a386cfcfe848/68747470733a2f2f62616467652e667572792e696f2f70792f6465657073706565642d6d69692e737667" alt="PyPI版本" data-canonical-src="https://badge.fury.io/py/deepspeed-mii.svg" style="max-width: 100%;"></a></p>
 
-<div align="center">
- <img src="docs/images/mii-white.svg#gh-light-mode-only" width="400px">
- <img src="docs/images/mii-dark.svg#gh-dark-mode-only" width="400px">
+<div align="center" dir="auto">
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/mii-white.svg#gh-light-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/mii-white.svg#gh-light-mode-only" width="400px" style="max-width: 100%;"></a>
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/mii-dark.svg#gh-dark-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/mii-dark.svg#gh-dark-mode-only" width="400px" style="max-width: 100%;"></a>
 </div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新消息</font></font></h2><a id="user-content-latest-news" class="anchor" aria-label="永久链接：最新消息" href="#latest-news"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2024/01] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-FastGen：引入 Mixtral、Phi-2 和 Falcon 支持，并提供主要性能和功能增强。</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2023/11] </font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-FastGen：通过 MII 和 DeepSpeed-Inference 为法学硕士生成高通量文本</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2022/11] </font></font><a href="/microsoft/DeepSpeed-MII/blob/main/mii/legacy/examples/benchmark/txt2img"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1秒内稳定的扩散图像生成。 DeepSpeed MII</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">[2022/10]</font></font><a href="https://www.deepspeed.ai/2022/10/10/mii.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">宣布用于推理的 DeepSpeed 模型实现 (MII)</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">内容</font></font></h1><a id="user-content-contents" class="anchor" aria-label="永久链接： 内容" href="#contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
 
-## Latest News
+<ul dir="auto">
+<li><a href="#deepspeed-mii"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-MII</font></font></a></li>
+<li><a href="#key-technologies"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关键技术</font></font></a></li>
+<li><a href="#how-does-mii-work"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">信息产业部如何运作？</font></font></a></li>
+<li><a href="#supported-models"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持型号</font></font></a></li>
+<li><a href="#getting-started-with-mii"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">入门</font></font></a></li>
+</ul>
 
-* [2024/01] [DeepSpeed-FastGen: Introducting Mixtral, Phi-2, and Falcon support with major performance and feature enhancements.](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19)
-* [2023/11] [DeepSpeed-FastGen: High-throughput Text Generation for LLMs via MII and DeepSpeed-Inference](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen)
-* [2022/11] [Stable Diffusion Image Generation under 1 second w. DeepSpeed MII](mii/legacy/examples/benchmark/txt2img)
-* [2022/10] [Announcing DeepSpeed Model Implementations for Inference (MII)](https://www.deepspeed.ai/2022/10/10/mii.html)
-
-# Contents
-
-<!-- toc -->
-
-- [DeepSpeed-MII](#deepspeed-mii)
-- [Key Technologies](#key-technologies)
-- [How does MII work?](#how-does-mii-work)
-- [Supported Models](#supported-models)
-- [Getting Started](#getting-started-with-mii)
-
-<!-- tocstop -->
-
-# DeepSpeed Model Implementations for Inference (MII) <a name="deepspeed-mii"></a>
-
-Introducing MII, an open-source Python library designed by DeepSpeed to democratize powerful model inference with a focus on high-throughput, low latency, and cost-effectiveness.
-
-* MII features include blocked KV-caching, continuous batching, Dynamic SplitFuse, tensor parallelism, and high-performance CUDA kernels to support fast high throughput text-generation for LLMs such as Llama-2-70B, Mixtral (MoE) 8x7B, and Phi-2. The latest updates in v0.2 add new model families, performance optimizations, and feature enhancements. MII now delivers up to 2.5 times higher effective throughput compared to leading systems such as vLLM. For detailed performance results please see our [latest DeepSpeed-FastGen blog](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19) and [DeepSpeed-FastGen release blog](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen).
-
-<div align="center">
- <img src="docs/images/fastgen-24-01-hero-light.png#gh-light-mode-only" width="850px">
- <img src="docs/images/fastgen-24-01-hero-dark.png#gh-dark-mode-only" width="850px">
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed 推理模型实现 (MII)</font></font><a name="user-content-deepspeed-mii"></a></h1><a id="user-content-deepspeed-model-implementations-for-inference-mii-" class="anchor" aria-label="永久链接：DeepSpeed 推理模型实现 (MII)" href="#deepspeed-model-implementations-for-inference-mii-"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">隆重推出 MII，这是由 DeepSpeed 设计的开源 Python 库，旨在实现强大的模型推理大众化，重点关注高吞吐量、低延迟和成本效益。</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 功能包括阻塞 KV 缓存、连续批处理、动态 SplitFuse、张量并行性和高性能 CUDA 内核，以支持 Llama-2-70B、Mixtral (MoE) 8x7B 和 Phi- 等 LLM 的快速高吞吐量文本生成2. v0.2 的最新更新添加了新的模型系列、性能优化和功能增强。与 vLLM 等领先系统相比，MII 现在的有效吞吐量提高了 2.5 倍。有关详细的性能结果，请参阅我们</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen/2024-01-19"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最新的 DeepSpeed-FastGen 博客</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">和</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-FastGen 发布博客</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<div align="center" dir="auto">
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/fastgen-24-01-hero-light.png#gh-light-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/fastgen-24-01-hero-light.png#gh-light-mode-only" width="850px" style="max-width: 100%;"></a>
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/fastgen-24-01-hero-dark.png#gh-dark-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/fastgen-24-01-hero-dark.png#gh-dark-mode-only" width="850px" style="max-width: 100%;"></a>
 </div>
-
-<div align="center">
- <img src="docs/images/fastgen-hero-light.png#gh-light-mode-only" width="800px">
- <img src="docs/images/fastgen-hero-dark.png#gh-dark-mode-only" width="800px">
+<div align="center" dir="auto">
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/fastgen-hero-light.png#gh-light-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/fastgen-hero-light.png#gh-light-mode-only" width="800px" style="max-width: 100%;"></a>
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/fastgen-hero-dark.png#gh-dark-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/fastgen-hero-dark.png#gh-dark-mode-only" width="800px" style="max-width: 100%;"></a>
 </div>
-
-* We first [announced MII](https://www.deepspeed.ai/2022/10/10/mii.html) in 2022, which covers all prior releases up to v0.0.9. In addition to language models, we also support accelerating [text2image models like Stable Diffusion](examples/benchmark/txt2img). For more details on our previous releases please see our [legacy APIs](mii/legacy/).
-
-# Key Technologies
-
-## MII for High-Throughput Text Generation
-
-MII provides accelerated text-generation inference through the use of four key technologies:
-
-* Blocked KV Caching
-* Continuous Batching
-* Dynamic SplitFuse
-* High Performance CUDA Kernels
-
-For a deeper dive into understanding these features please [refer to our blog](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen) which also includes a detailed performance analysis.
-
-## MII Legacy
-
-In the past, MII introduced several [key performance optimizations](https://www.deepspeed.ai/2022/10/10/mii.html#inference-optimizations-with-mii) for low-latency serving scenarios:
-
-* DeepFusion for Transformers
-* Multi-GPU Inference with Tensor-Slicing
-* ZeRO-Inference for Resource Constrained Systems
-* Compiler Optimizations
-
-
-# How does MII work?
-
-<div align="center">
- <img src="docs/images/mii-arch-light.png#gh-light-mode-only" width="800px">
- <img src="docs/images/mii-arch-dark.png#gh-dark-mode-only" width="800px">
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们于 2022 年首次</font></font><a href="https://www.deepspeed.ai/2022/10/10/mii.html" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发布 MII</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，涵盖 v0.0.9 之前的所有先前版本。除了语言模型之外，我们还支持加速</font></font><a href="/microsoft/DeepSpeed-MII/blob/main/examples/benchmark/txt2img"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">text2image 模型，例如 Stable Diffusion</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。有关我们以前版本的更多详细信息，请参阅我们的</font></font><a href="/microsoft/DeepSpeed-MII/blob/main/mii/legacy"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">旧版 API</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关键技术</font></font></h1><a id="user-content-key-technologies" class="anchor" aria-label="永久链接：关键技术" href="#key-technologies"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用于高通量文本生成的 MII</font></font></h2><a id="user-content-mii-for-high-throughput-text-generation" class="anchor" aria-label="永久链接：用于高通量文本生成的 MII" href="#mii-for-high-throughput-text-generation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 通过使用四项关键技术来提供加速文本生成推理：</font></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">阻塞的KV缓存</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">连续配料</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">动态分体保险丝</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高性能 CUDA 内核</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">要更深入地了解这些功能，请</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">参阅我们的博客</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，其中还包括详细的性能分析。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">信息产业部遗产</font></font></h2><a id="user-content-mii-legacy" class="anchor" aria-label="永久链接：MII 遗产" href="#mii-legacy"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">过去，信息产业部</font><font style="vertical-align: inherit;">针对低时延服务场景推出了多项</font></font><a href="https://www.deepspeed.ai/2022/10/10/mii.html#inference-optimizations-with-mii" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">关键性能优化：</font></font></a><font style="vertical-align: inherit;"></font></p>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于变形金刚的 DeepFusion</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用张量切片进行多 GPU 推理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">适用于资源受限系统的 ZeRO 推理</font></font></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">编译器优化</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">信息产业部如何运作？</font></font></h1><a id="user-content-how-does-mii-work" class="anchor" aria-label="永久链接：MII 如何运作？" href="#how-does-mii-work"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<div align="center" dir="auto">
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/mii-arch-light.png#gh-light-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/mii-arch-light.png#gh-light-mode-only" width="800px" style="max-width: 100%;"></a>
+ <a target="_blank" rel="noopener noreferrer" href="/microsoft/DeepSpeed-MII/blob/main/docs/images/mii-arch-dark.png#gh-dark-mode-only"><img src="/microsoft/DeepSpeed-MII/raw/main/docs/images/mii-arch-dark.png#gh-dark-mode-only" width="800px" style="max-width: 100%;"></a>
 </div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">图 1：MII 架构，显示 MII 如何在部署 OSS 模型之前使用 DS-Inference 自动优化它们。图中的 DeepSpeed-FastGen 优化已发布在</font></font><a href="https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们的博文</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">中。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 的底层由</font></font><a href="https://github.com/microsoft/deepspeed"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-Inference</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提供支持。根据模型架构、模型大小、批量大小和可用硬件资源，MII 自动应用适当的系统优化集，以最小化延迟并最大化吞吐量。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持型号</font></font></h1><a id="user-content-supported-models" class="anchor" aria-label="永久链接：支持的型号" href="#supported-models"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 目前支持八种流行模型架构中的 20,000 多个模型。我们计划在短期内添加其他模型，如果您希望支持特定的模型架构，请</font></font><a href="https://github.com/microsoft/DeepSpeed-MII/issues"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提出问题</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并告知我们。当前所有模型都利用后端的 Hugging Face 来提供模型权重和模型相应的标记器。对于我们当前的版本，我们支持以下模型架构：</font></font></p>
+<table>
+<thead>
+<tr>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模范家庭</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">尺寸范围</font></font></th>
+<th><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">~型号数</font></font></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://huggingface.co/models?other=falcon" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">鹘</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7B - 180B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">300</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=llama" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">骆驼</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7B - 65B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">19,000</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=llama-2" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">骆驼-2</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7B - 70B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">900</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=mistral" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">米斯塔拉尔</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">6,000</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=mixtral" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">混合（教育部）</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">8x7B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1,100</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=opt" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选择</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">0.1B - 66B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">1,300</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=phi" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">phi-2</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">2.7B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">200</font></font></td>
+</tr>
+<tr>
+<td><a href="https://huggingface.co/models?other=qwen" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">曲文</font></font></a></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">7B - 72B</font></font></td>
+<td><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">200</font></font></td>
+</tr>
+</tbody>
+</table>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 旧模型支持</font></font></h2><a id="user-content-mii-legacy-model-support" class="anchor" aria-label="永久链接：MII 旧模型支持" href="#mii-legacy-model-support"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 旧版 API 支持超过 50,000 种不同的模型，包括 BERT、RoBERTa、Stable Diffusion 以及 Bloom、GPT-J 等其他文本生成模型。有关完整列表，请参阅我们的</font></font><a href="/microsoft/DeepSpeed-MII/blob/main/mii/legacy/#supported-models-and-tasks"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">旧版支持模型表</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">MII 入门</font></font></h1><a id="user-content-getting-started-with-mii" class="anchor" aria-label="永久链接：MII 入门" href="#getting-started-with-mii"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">DeepSpeed-MII 允许用户只需几行代码即可为支持的模型创建非持久和持久部署。</font></font></p>
+<ul dir="auto">
+<li><a href="#installation"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></a></li>
+<li><a href="#non-persistent-pipeline"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">非持久管道</font></font></a></li>
+<li><a href="#persistent-deployment"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">持久部署</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">安装</font></font></h2><a id="user-content-installation" class="anchor" aria-label="永久链接：安装" href="#installation"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最快的入门方法是使用我们的</font></font><a href="https://pypi.org/project/deepspeed-mii/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">PyPI 版本的 DeepSpeed-MII，</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这意味着您可以通过以下方式在几分钟内开始使用：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>pip install deepspeed-mii</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pip install deepspeed-mii" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://github.com/microsoft/DeepSpeed-Kernels"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为了易于使用并显着减少许多项目在此领域所需的冗长编译时间，我们通过一个名为DeepSpeed-Kernels</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">的新库分发了一个预编译的 python 轮，涵盖了我们的大多数自定义内核</font><font style="vertical-align: inherit;">。我们发现该库在具有计算能力 8.0+ (Ampere+)、CUDA 11.6+ 和 Ubuntu 20+ 的 NVIDIA GPU 的环境中非常便携。在大多数情况下，您甚至不需要知道该库的存在，因为它是 DeepSpeed-MII 的依赖项，并将随其一起安装。但是，如果出于某种原因您需要手动编译我们的内核，请参阅我们的</font></font><a href="https://github.com/microsoft/DeepSpeed-Kernels#source"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">高级安装文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">非持久管道</font></font></h2><a id="user-content-non-persistent-pipeline" class="anchor" aria-label="永久链接：非持久管道" href="#non-persistent-pipeline"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">非持久管道是尝试 DeepSpeed-MII 的好方法。非持久管道仅在您运行的 python 脚本期间存在。运行非持久管道部署的完整示例只有 4 行。试一试！</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-s1">mii</span>
+<span class="pl-s1">pipe</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">pipeline</span>(<span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>)
+<span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-en">pipe</span>([<span class="pl-s">"DeepSpeed is"</span>, <span class="pl-s">"Seattle is"</span>], <span class="pl-s1">max_new_tokens</span><span class="pl-c1">=</span><span class="pl-c1">128</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">response</span>)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import mii
+pipe = mii.pipeline(&quot;mistralai/Mistral-7B-v0.1&quot;)
+response = pipe([&quot;DeepSpeed is&quot;, &quot;Seattle is&quot;], max_new_tokens=128)
+print(response)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">返回的</font></font><code>response</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是对象列表</font></font><code>Response</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。我们可以访问有关该生成的几个详细信息（例如，</font></font><code>response[0].prompt_length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）：</font></font></p>
+<ul dir="auto">
+<li><code>generated_text: str</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型生成的文本。</font></font></li>
+<li><code>prompt_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原始提示中的标记数。</font></font></li>
+<li><code>generated_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生成的代币数量。</font></font></li>
+<li><code>finish_reason: str</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">停止生成的原因。</font></font><code>stop</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表示 EOS 代币已生成，</font></font><code>length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表示代币达到</font></font><code>max_new_tokens</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><code>max_length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果要释放设备内存并销毁管道，请使用以下</font></font><code>destroy</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">方法：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">pipe</span>.<span class="pl-en">destroy</span>()</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="pipe.destroy()" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">张量并行性</font></font></h3><a id="user-content-tensor-parallelism" class="anchor" aria-label="永久链接：张量并行性" href="#tensor-parallelism"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过 MII，可以轻松利用多 GPU 系统来提高性能。当使用启动器运行时</font></font><code>deepspeed</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，张量并行度由标志自动控制</font></font><code>--num_gpus</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-c"><span class="pl-c">#</span> Run on a single GPU</span>
+deepspeed --num_gpus 1 mii-example.py
 
-
-Figure 1: MII architecture, showing how MII automatically optimizes OSS models using DS-Inference before deploying them. DeepSpeed-FastGen optimizations in the figure have been published in [our blog post](https://github.com/microsoft/DeepSpeed/tree/master/blogs/deepspeed-fastgen).
-
-Under-the-hood MII is powered by [DeepSpeed-Inference](https://github.com/microsoft/deepspeed). Based on the model architecture, model size, batch size, and available hardware resources, MII automatically applies the appropriate set of system optimizations to minimize latency and maximize throughput.
-
-
-# Supported Models
-
-MII currently supports over 20,000 models across eight popular model architectures. We plan to add additional models in the near term, if there are specific model architectures you would like supported please [file an issue](https://github.com/microsoft/DeepSpeed-MII/issues) and let us know. All current models leverage Hugging Face in our backend to provide both the model weights and the model's corresponding tokenizer. For our current release we support the following model architectures:
-
-model family | size range | ~model count
------- | ------ | ------
-[falcon](https://huggingface.co/models?other=falcon) | 7B - 180B | 300
-[llama](https://huggingface.co/models?other=llama) | 7B - 65B | 19,000
-[llama-2](https://huggingface.co/models?other=llama-2) | 7B - 70B | 900
-[mistral](https://huggingface.co/models?other=mistral) | 7B | 6,000
-[mixtral (MoE)](https://huggingface.co/models?other=mixtral) | 8x7B | 1,100
-[opt](https://huggingface.co/models?other=opt) | 0.1B - 66B | 1,300
-[phi-2](https://huggingface.co/models?other=phi) | 2.7B | 200
-[qwen](https://huggingface.co/models?other=qwen) | 7B - 72B | 200
-
-## MII Legacy Model Support
-
-MII Legacy APIs support over 50,000 different models including BERT, RoBERTa, Stable Diffusion, and other text-generation models like Bloom, GPT-J, etc. For a full list please see our [legacy supported models table](mii/legacy/#supported-models-and-tasks).
-
-# Getting Started with MII
-
-DeepSpeed-MII allows users to create non-persistent and persistent deployments for supported models in just a few lines of code.
-
-- [Installation](#installation)
-- [Non-Persistent Pipeline](#non-persistent-pipeline)
-- [Persistent Deployment](#persistent-deployment)
-
-## Installation
-
-The fasest way to get started is with our [PyPI release of DeepSpeed-MII](https://pypi.org/project/deepspeed-mii/) which means you can get started within minutes via:
-
-```bash
-pip install deepspeed-mii
-```
-
-For ease of use and significant reduction in lengthy compile times that many projects require in this space we distribute a pre-compiled python wheel covering the majority of our custom kernels through a new library called [DeepSpeed-Kernels](https://github.com/microsoft/DeepSpeed-Kernels). We have found this library to be very portable across environments with NVIDIA GPUs with compute capabilities 8.0+ (Ampere+), CUDA 11.6+, and Ubuntu 20+. In most cases you shouldn't even need to know this library exists as it is a dependency of DeepSpeed-MII and will be installed with it. However, if for whatever reason you need to compile our kernels manually please see our [advanced installation docs](https://github.com/microsoft/DeepSpeed-Kernels#source).
-
-## Non-Persistent Pipeline
-
-A non-persistent pipeline is a great way to try DeepSpeed-MII. Non-persistent pipelines are only around for the duration of the python script you are running. The full example for running a non-persistent pipeline deployment is only 4 lines. Give it a try!
-
-```python
-import mii
-pipe = mii.pipeline("mistralai/Mistral-7B-v0.1")
-response = pipe(["DeepSpeed is", "Seattle is"], max_new_tokens=128)
-print(response)
-```
-
-The returned `response` is a list of `Response` objects. We can access several details about the generation (e.g., `response[0].prompt_length`):
-
-- `generated_text: str` Text generated by the model.
-- `prompt_length: int` Number of tokens in the original prompt.
-- `generated_length: int` Number of tokens generated.
-- `finish_reason: str` Reason for stopping generation. `stop` indicates the EOS token was generated and `length` indicates the generation reached `max_new_tokens` or `max_length`.
-
-If you want to free device memory and destroy the pipeline, use the `destroy` method:
-
-```python
-pipe.destroy()
-```
-
-### Tensor parallelism
-
-Taking advantage of multi-GPU systems for greater performance is easy with MII. When run with the `deepspeed` launcher, tensor parallelism is automatically controlled by the `--num_gpus` flag:
-
-```bash
-# Run on a single GPU
+<span class="pl-c"><span class="pl-c">#</span> Run on multiple GPUs</span>
+deepspeed --num_gpus 2 mii-example.py</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="# Run on a single GPU
 deepspeed --num_gpus 1 mii-example.py
 
 # Run on multiple GPUs
-deepspeed --num_gpus 2 mii-example.py
-```
-### Pipeline Options
-While only the model name or path is required to stand up a non-persistent pipeline deployment, we offer customization options to our users:
-
-**`mii.pipeline()` Options**:
-- `model_name_or_path: str` Name or local path to a [HuggingFace](https://huggingface.co/) model.
-- `max_length: int` Sets the default maximum token length for the prompt + response.
-- `all_rank_output: bool` When enabled, all ranks return the generated text. By default, only rank 0 will return text.
-
-Users can also control the generation characteristics for individual prompts (i.e., when calling `pipe()`) with the following options:
-
-- `max_length: int` Sets the per-prompt maximum token length for prompt + response.
-- `min_new_tokens: int` Sets the minimum number of tokens generated in the response. `max_length` will take precedence over this setting.
-- `max_new_tokens: int` Sets the maximum number of tokens generated in the response.
-- `ignore_eos: bool` (Defaults to `False`) Setting to `True` prevents generation from ending when the EOS token is encountered.
-- `top_p: float` (Defaults to `0.9`) When set below `1.0`, filter tokens and keep only the most probable, where token probabilities sum to &ge;`top_p`.
-- `top_k: int` (Defaults to `None`) When `None`, top-k filtering is disabled. When set, the number of highest probability tokens to keep.
-- `temperature: float` (Defaults to `None`) When `None`, temperature is disabled. When set, modulates token probabilities.
-- `do_sample: bool` (Defaults to `True`) When `True`, sample output logits. When `False`, use greedy sampling.
-- `return_full_text: bool` (Defaults to `False`) When `True`, prepends the input prompt to the returned text
-
-## Persistent Deployment
-
-A persistent deployment is ideal for use with long-running and production applications. The persistent model uses a lightweight GRPC server that can be queried by multiple clients at once. The full example for running a persistent model is only 5 lines. Give it a try!
-
-```python
-import mii
-client = mii.serve("mistralai/Mistral-7B-v0.1")
-response = client.generate(["Deepspeed is", "Seattle is"], max_new_tokens=128)
-print(response)
-```
-
-The returned `response` is a list of `Response` objects. We can access several details about the generation (e.g., `response[0].prompt_length`):
-
-- `generated_text: str` Text generated by the model.
-- `prompt_length: int` Number of tokens in the original prompt.
-- `generated_length: int` Number of tokens generated.
-- `finish_reason: str` Reason for stopping generation. `stop` indicates the EOS token was generated and `length` indicates the generation reached `max_new_tokens` or `max_length`.
-
-If we want to generate text from other processes, we can do that too:
-
-```python
-client = mii.client("mistralai/Mistral-7B-v0.1")
-response = client.generate("Deepspeed is", max_new_tokens=128)
-```
-
-When we no longer need a persistent deployment, we can shutdown the server from any client:
-
-```python
-client.terminate_server()
-```
-
-### Model Parallelism
-
-Taking advantage of multi-GPU systems for better latency and throughput is also easy with the persistent deployments. Model parallelism is controlled by the `tensor_parallel` input to `mii.serve`:
-
-```python
-client = mii.serve("mistralai/Mistral-7B-v0.1", tensor_parallel=2)
-```
-
-The resulting deployment will split the model across 2 GPUs to deliver faster inference and higher throughput than a single GPU.
-
-### Model Replicas
-
-We can also take advantage of multi-GPU (and multi-node) systems by setting up multiple model replicas and taking advantage of the load-balancing that DeepSpeed-MII provides:
-
-```python
-client = mii.serve("mistralai/Mistral-7B-v0.1", replica_num=2)
-```
-
-The resulting deployment will load 2 model replicas (one per GPU) and load-balance incoming requests between the 2 model instances.
-
-Model parallelism and replicas can also be combined to take advantage of systems with many more GPUs. In the example below, we run 2 model replicas, each split across 2 GPUs on a system with 4 GPUs:
-
-```python
-client = mii.serve("mistralai/Mistral-7B-v0.1", tensor_parallel=2, replica_num=2)
-```
-
-The choice between model parallelism and model replicas for maximum performance will depend on the nature of the hardware, model, and workload. For example, with small models users may find that model replicas provide the lowest average latency for requests. Meanwhile, large models may achieve greater overall throughput when using only model parallelism.
-
-### RESTful API
-
-MII makes it easy to setup and run model inference via RESTful APIs by setting `enable_restful_api=True` when creating a persistent MII deployment. The RESTful API can receive requests at `http://{HOST}:{RESTFUL_API_PORT}/mii/{DEPLOYMENT_NAME}`. A full example is provided below:
-
-```python
-client = mii.serve(
-    "mistralai/Mistral-7B-v0.1",
-    deployment_name="mistral-deployment",
+deepspeed --num_gpus 2 mii-example.py" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">管道选项</font></font></h3><a id="user-content-pipeline-options" class="anchor" aria-label="永久链接：管道选项" href="#pipeline-options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虽然仅需要模型名称或路径即可支持非持久管道部署，但我们为用户提供自定义选项：</font></font></p>
+<p dir="auto"><strong><code>mii.pipeline()</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<ul dir="auto">
+<li><code>model_name_or_path: str</code><font style="vertical-align: inherit;"></font><a href="https://huggingface.co/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">HuggingFace</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型的名称或本地路径</font><font style="vertical-align: inherit;">。</font></font></li>
+<li><code>max_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置提示 + 响应的默认最大令牌长度。</font></font></li>
+<li><code>all_rank_output: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">启用后，所有排名都会返回生成的文本。默认情况下，只有排名 0 才会返回文本。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"></font><code>pipe()</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户还可以使用以下选项</font><font style="vertical-align: inherit;">控制各个提示的生成特征（即，调用时）：</font></font></p>
+<ul dir="auto">
+<li><code>max_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置提示 + 响应的每个提示的最大标记长度。</font></font></li>
+<li><code>min_new_tokens: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置响应中生成的最小令牌数。</font></font><code>max_length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将优先于此设置。</font></font></li>
+<li><code>max_new_tokens: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置响应中生成的令牌的最大数量。</font></font></li>
+<li><code>ignore_eos: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）设置为</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">防止遇到 EOS 代币时结束生成。</font></font></li>
+<li><code>top_p: float</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>0.9</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当设置如下时</font></font><code>1.0</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，过滤标记并仅保留最可能的标记，其中标记概率总和为 ≥ </font></font><code>top_p</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><code>top_k: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当 时</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，top-k 过滤功能被禁用。设置后，要保留的最高概率令牌的数量。</font></font></li>
+<li><code>temperature: float</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">） 当 时</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，温度禁用。设置后，调整令牌概率。</font></font></li>
+<li><code>do_sample: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当 时</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，样本输出 logits。当 时</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，使用贪婪采样。</font></font></li>
+<li><code>return_full_text: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当 时</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，将输入提示添加到返回的文本中</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h2 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">持久部署</font></font></h2><a id="user-content-persistent-deployment" class="anchor" aria-label="永久链接：持久部署" href="#persistent-deployment"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">持久部署非常适合长时间运行的生产应用程序。持久模型使用轻量级 GRPC 服务器，可以同时被多个客户端查询。运行持久模型的完整示例只有 5 行。试一试！</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-s1">mii</span>
+<span class="pl-s1">client</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">serve</span>(<span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>)
+<span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-s1">client</span>.<span class="pl-en">generate</span>([<span class="pl-s">"Deepspeed is"</span>, <span class="pl-s">"Seattle is"</span>], <span class="pl-s1">max_new_tokens</span><span class="pl-c1">=</span><span class="pl-c1">128</span>)
+<span class="pl-en">print</span>(<span class="pl-s1">response</span>)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import mii
+client = mii.serve(&quot;mistralai/Mistral-7B-v0.1&quot;)
+response = client.generate([&quot;Deepspeed is&quot;, &quot;Seattle is&quot;], max_new_tokens=128)
+print(response)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">返回的</font></font><code>response</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">是对象列表</font></font><code>Response</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。我们可以访问有关该生成的几个详细信息（例如，</font></font><code>response[0].prompt_length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）：</font></font></p>
+<ul dir="auto">
+<li><code>generated_text: str</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型生成的文本。</font></font></li>
+<li><code>prompt_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">原始提示中的标记数。</font></font></li>
+<li><code>generated_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">生成的代币数量。</font></font></li>
+<li><code>finish_reason: str</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">停止生成的原因。</font></font><code>stop</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表示 EOS 代币已生成，</font></font><code>length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">表示代币达到</font></font><code>max_new_tokens</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><code>max_length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果我们想从其他进程生成文本，我们也可以这样做：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">client</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">client</span>(<span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>)
+<span class="pl-s1">response</span> <span class="pl-c1">=</span> <span class="pl-s1">client</span>.<span class="pl-en">generate</span>(<span class="pl-s">"Deepspeed is"</span>, <span class="pl-s1">max_new_tokens</span><span class="pl-c1">=</span><span class="pl-c1">128</span>)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client = mii.client(&quot;mistralai/Mistral-7B-v0.1&quot;)
+response = client.generate(&quot;Deepspeed is&quot;, max_new_tokens=128)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当我们不再需要持久部署时，我们可以从任何客户端关闭服务器：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">client</span>.<span class="pl-en">terminate_server</span>()</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client.terminate_server()" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型并行性</font></font></h3><a id="user-content-model-parallelism" class="anchor" aria-label="永久链接：模型并行性" href="#model-parallelism"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过持久部署，利用多 GPU 系统来实现更好的延迟和吞吐量也很容易。模型并行性由</font></font><code>tensor_parallel</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">以下输入</font><font style="vertical-align: inherit;">控制</font></font><code>mii.serve</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">client</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">serve</span>(<span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>, <span class="pl-s1">tensor_parallel</span><span class="pl-c1">=</span><span class="pl-c1">2</span>)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client = mii.serve(&quot;mistralai/Mistral-7B-v0.1&quot;, tensor_parallel=2)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最终的部署会将模型拆分到 2 个 GPU 上，以提供比单个 GPU 更快的推理速度和更高的吞吐量。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型复制品</font></font></h3><a id="user-content-model-replicas" class="anchor" aria-label="永久链接：模型复制品" href="#model-replicas"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">我们还可以通过设置多个模型副本并利用 DeepSpeed-MII 提供的负载平衡来利用多 GPU（和多节点）系统：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">client</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">serve</span>(<span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>, <span class="pl-s1">replica_num</span><span class="pl-c1">=</span><span class="pl-c1">2</span>)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client = mii.serve(&quot;mistralai/Mistral-7B-v0.1&quot;, replica_num=2)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">最终的部署将加载 2 个模型副本（每个 GPU 一个）并在 2 个模型实例之间对传入请求进行负载平衡。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型并行性和副本也可以结合起来，以利用具有更多 GPU 的系统。在下面的示例中，我们运行 2 个模型副本，每个副本在具有 4 个 GPU 的系统上分布在 2 个 GPU 上：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">client</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">serve</span>(<span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>, <span class="pl-s1">tensor_parallel</span><span class="pl-c1">=</span><span class="pl-c1">2</span>, <span class="pl-s1">replica_num</span><span class="pl-c1">=</span><span class="pl-c1">2</span>)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client = mii.serve(&quot;mistralai/Mistral-7B-v0.1&quot;, tensor_parallel=2, replica_num=2)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">为了获得最大性能，在模型并行性和模型副本之间进行选择将取决于硬件、模型和工作负载的性质。例如，对于小型模型，用户可能会发现模型副本为请求提供最低的平均延迟。同时，仅使用模型并行性时，大型模型可能会实现更大的总体吞吐量。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">RESTful API</font></font></h3><a id="user-content-restful-api" class="anchor" aria-label="永久链接：RESTful API" href="#restful-api"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"></font><code>enable_restful_api=True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">通过在创建持久 MII 部署时</font><font style="vertical-align: inherit;">进行设置，MII 可以轻松地通过 RESTful API 设置和运行模型推理。 </font><font style="vertical-align: inherit;">RESTful API 可以接收位于 的请求</font></font><code>http://{HOST}:{RESTFUL_API_PORT}/mii/{DEPLOYMENT_NAME}</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。下面提供了完整的示例：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-s1">client</span> <span class="pl-c1">=</span> <span class="pl-s1">mii</span>.<span class="pl-en">serve</span>(
+    <span class="pl-s">"mistralai/Mistral-7B-v0.1"</span>,
+    <span class="pl-s1">deployment_name</span><span class="pl-c1">=</span><span class="pl-s">"mistral-deployment"</span>,
+    <span class="pl-s1">enable_restful_api</span><span class="pl-c1">=</span><span class="pl-c1">True</span>,
+    <span class="pl-s1">restful_api_port</span><span class="pl-c1">=</span><span class="pl-c1">28080</span>,
+)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="client = mii.serve(
+    &quot;mistralai/Mistral-7B-v0.1&quot;,
+    deployment_name=&quot;mistral-deployment&quot;,
     enable_restful_api=True,
     restful_api_port=28080,
-)
-```
-
----
-📌 **Note:** While providing a `deployment_name` is not necessary (MII will autogenerate one for you), it is good practice to provide a `deployment_name` so that you can ensure you are interfacing with the correct RESTful API.
-
----
-
-You can then send prompts to the RESTful gateway with any HTTP client, such as `curl`:
-
-```bash
-curl --header "Content-Type: application/json" --request POST  -d '{"prompts": ["DeepSpeed is", "Seattle is"], "max_length": 128}' http://localhost:28080/mii/mistral-deployment
-```
-
-or `python`:
-
-```python
-import json
+)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<hr>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">📌</font></font><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注意：</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虽然提供 a</font></font><code>deployment_name</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不是必需的（MII 将为您自动生成一个），但提供 a 是一种很好的做法，</font></font><code>deployment_name</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">这样您就可以确保与正确的 RESTful API 进行交互。</font></font></p>
+<hr>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">然后，您可以使用任何 HTTP 客户端向 RESTful 网关发送提示，例如</font></font><code>curl</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>curl --header <span class="pl-s"><span class="pl-pds">"</span>Content-Type: application/json<span class="pl-pds">"</span></span> --request POST  -d <span class="pl-s"><span class="pl-pds">'</span>{"prompts": ["DeepSpeed is", "Seattle is"], "max_length": 128}<span class="pl-pds">'</span></span> http://localhost:28080/mii/mistral-deployment</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="curl --header &quot;Content-Type: application/json&quot; --request POST  -d '{&quot;prompts&quot;: [&quot;DeepSpeed is&quot;, &quot;Seattle is&quot;], &quot;max_length&quot;: 128}' http://localhost:28080/mii/mistral-deployment" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或者</font></font><code>python</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<div class="highlight highlight-source-python notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">import</span> <span class="pl-s1">json</span>
+<span class="pl-k">import</span> <span class="pl-s1">requests</span>
+<span class="pl-s1">url</span> <span class="pl-c1">=</span> <span class="pl-s">f"http://localhost:28080/mii/mistral-deployment"</span>
+<span class="pl-s1">params</span> <span class="pl-c1">=</span> {<span class="pl-s">"prompts"</span>: [<span class="pl-s">"DeepSpeed is"</span>, <span class="pl-s">"Seattle is"</span>], <span class="pl-s">"max_length"</span>: <span class="pl-c1">128</span>}
+<span class="pl-s1">json_params</span> <span class="pl-c1">=</span> <span class="pl-s1">json</span>.<span class="pl-en">dumps</span>(<span class="pl-s1">params</span>)
+<span class="pl-s1">output</span> <span class="pl-c1">=</span> <span class="pl-s1">requests</span>.<span class="pl-en">post</span>(
+    <span class="pl-s1">url</span>, <span class="pl-s1">data</span><span class="pl-c1">=</span><span class="pl-s1">json_params</span>, <span class="pl-s1">headers</span><span class="pl-c1">=</span>{<span class="pl-s">"Content-Type"</span>: <span class="pl-s">"application/json"</span>}
+)</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="import json
 import requests
-url = f"http://localhost:28080/mii/mistral-deployment"
-params = {"prompts": ["DeepSpeed is", "Seattle is"], "max_length": 128}
+url = f&quot;http://localhost:28080/mii/mistral-deployment&quot;
+params = {&quot;prompts&quot;: [&quot;DeepSpeed is&quot;, &quot;Seattle is&quot;], &quot;max_length&quot;: 128}
 json_params = json.dumps(params)
 output = requests.post(
-    url, data=json_params, headers={"Content-Type": "application/json"}
-)
-```
+    url, data=json_params, headers={&quot;Content-Type&quot;: &quot;application/json&quot;}
+)" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
 
-<!--
-### Token Streaming
-With a persistent deployment, the resulting response text can be streamed back to the client as it is generated. This functionality is useful for chatbot style applications. A simple example of streaming tokens is below:
-```python
-import mii
-
-out_tokens = []
-def callback(response):
-    print(f"Received: {response.response}")
-    out_tokens.append(response.response)
-
-client = mii.serve("mistralai/Mistral-7B-v0.1")
-client.generate("Deepspeed is", streaming_fn=callback)
-```
-
-To enable streaming output, we must provide `streaming_fn` with the prompt. This should be a callable function that acts as a callback and will receive the streaming tokens at they are generated. In the example above, we show a simple function that prints the current token and appends to a final output `out_tokens`.
--->
-
-### Persistent Deployment Options
-While only the model name or path is required to stand up a persistent deployment, we offer customization options to our users.
-
-**`mii.serve()` Options**:
-- `model_name_or_path: str` (Required) Name or local path to a [HuggingFace](https://huggingface.co/) model.
-- `max_length: int` (Defaults to maximum sequence length in model config) Sets the default maximum token length for the prompt + response.
-- `deployment_name: str` (Defaults to `f"{model_name_or_path}-mii-deployment"`) A unique identifying string for the persistent model. If provided, client objects should be retrieved with `client = mii.client(deployment_name)`.
-- `tensor_parallel: int` (Defaults to `1`) Number of GPUs to split the model across.
-- `replica_num: int` (Defaults to `1`) The number of model replicas to stand up.
-- `enable_restful_api: bool` (Defaults to `False`) When enabled, a RESTful API gateway process is launched that can be queried at `http://{host}:{restful_api_port}/mii/{deployment_name}`. See the [section on RESTful APIs](#restful-api) for more details.
-- `restful_api_port: int` (Defaults to `28080`) The port number used to interface with the RESTful API when `enable_restful_api` is set to `True`.
-
-**`mii.client()` Options**:
-- `model_or_deployment_name: str` Name of the model or `deployment_name` passed to `mii.serve()`
-
-Users can also control the generation characteristics for individual prompts (i.e., when calling `client.generate()`) with the following options:
-
-- `max_length: int` Sets the per-prompt maximum token length for prompt + response.
-- `min_new_tokens: int` Sets the minimum number of tokens generated in the response. `max_length` will take precedence over this setting.
-- `max_new_tokens: int` Sets the maximum number of tokens generated in the response.
-- `ignore_eos: bool` (Defaults to `False`) Setting to `True` prevents generation from ending when the EOS token is encountered.
-- `top_p: float` (Defaults to `0.9`) When set below `1.0`, filter tokens and keep only the most probable, where token probabilities sum to &ge;`top_p`.
-- `top_k: int` (Defaults to `None`) When `None`, top-k filtering is disabled. When set, the number of highest probability tokens to keep.
-- `temperature: float` (Defaults to `None`) When `None`, temperature is disabled. When set, modulates token probabilities.
-- `do_sample: bool` (Defaults to `True`) When `True`, sample output logits. When `False`, use greedy sampling.
-- `return_full_text: bool` (Defaults to `False`) When `True`, prepends the input prompt to the returned text
-
-
-# Contributing
-
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
-
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
-
-# Trademarks
-
-This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
-trademarks or logos is subject to and must follow
-[Microsoft's Trademark & Brand Guidelines](https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general).
-Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
-Any use of third-party trademarks or logos are subject to those third-party's policies.
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">持久部署选项</font></font></h3><a id="user-content-persistent-deployment-options" class="anchor" aria-label="永久链接：持久部署选项" href="#persistent-deployment-options"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虽然只需要模型名称或路径即可进行持久部署，但我们为用户提供自定义选项。</font></font></p>
+<p dir="auto"><strong><code>mii.serve()</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<ul dir="auto">
+<li><code>model_name_or_path: str</code><font style="vertical-align: inherit;"></font><a href="https://huggingface.co/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（必需） HuggingFace</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型的名称或本地路径</font><font style="vertical-align: inherit;">。</font></font></li>
+<li><code>max_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为模型配置中的最大序列长度）设置提示+响应的默认最大标记长度。</font></font></li>
+<li><code>deployment_name: str</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>f"{model_name_or_path}-mii-deployment"</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）持久模型的唯一标识字符串。如果提供，则应使用 检索客户端对象</font></font><code>client = mii.client(deployment_name)</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><code>tensor_parallel: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>1</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）用于分割模型的 GPU 数量。</font></font></li>
+<li><code>replica_num: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>1</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）要建立的模型副本数。</font></font></li>
+<li><code>enable_restful_api: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）启用后，将启动 RESTful API 网关进程，可以在 处进行查询</font></font><code>http://{host}:{restful_api_port}/mii/{deployment_name}</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font><font style="vertical-align: inherit;">有关更多详细信息，</font><font style="vertical-align: inherit;">请参阅</font></font><a href="#restful-api"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有关 RESTful API 的部分。</font></font></a><font style="vertical-align: inherit;"></font></li>
+<li><code>restful_api_port: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为）</font><font style="vertical-align: inherit;">设置为</font></font><code>28080</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">时用于与 RESTful API 交互的端口号</font><font style="vertical-align: inherit;">。</font></font><code>enable_restful_api</code><font style="vertical-align: inherit;"></font><code>True</code><font style="vertical-align: inherit;"></font></li>
+</ul>
+<p dir="auto"><strong><code>mii.client()</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">选项</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">：</font></font></p>
+<ul dir="auto">
+<li><code>model_or_deployment_name: str</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">模型名称或</font></font><code>deployment_name</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">传递给</font></font><code>mii.serve()</code></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"></font><code>client.generate()</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用户还可以使用以下选项</font><font style="vertical-align: inherit;">控制各个提示的生成特征（即，调用时）：</font></font></p>
+<ul dir="auto">
+<li><code>max_length: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置提示 + 响应的每个提示的最大标记长度。</font></font></li>
+<li><code>min_new_tokens: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置响应中生成的最小令牌数。</font></font><code>max_length</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">将优先于此设置。</font></font></li>
+<li><code>max_new_tokens: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">设置响应中生成的令牌的最大数量。</font></font></li>
+<li><code>ignore_eos: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）设置为</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">防止遇到 EOS 代币时结束生成。</font></font></li>
+<li><code>top_p: float</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>0.9</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当设置如下时</font></font><code>1.0</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，过滤标记并仅保留最可能的标记，其中标记概率总和为 ≥ </font></font><code>top_p</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></li>
+<li><code>top_k: int</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当 时</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，top-k 过滤功能被禁用。设置后，要保留的最高概率令牌的数量。</font></font></li>
+<li><code>temperature: float</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">） 当 时</font></font><code>None</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，温度禁用。设置后，调整令牌概率。</font></font></li>
+<li><code>do_sample: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当 时</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，样本输出 logits。当 时</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，使用贪婪采样。</font></font></li>
+<li><code>return_full_text: bool</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">（默认为</font></font><code>False</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）当 时</font></font><code>True</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，将输入提示添加到返回的文本中</font></font></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">贡献</font></font></h1><a id="user-content-contributing" class="anchor" aria-label="永久链接：贡献" href="#contributing"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目欢迎贡献和建议。大多数贡献都要求您同意贡献者许可协议 (CLA)，声明您有权并且实际上授予我们使用您的贡献的权利。有关详细信息，请访问</font></font><a href="https://cla.opensource.microsoft.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://cla.opensource.microsoft.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">当您提交拉取请求时，CLA 机器人将自动确定您是否需要提供 CLA 并适当地修饰 PR（例如，状态检查、评论）。只需按照机器人提供的说明进行操作即可。您只需使用我们的 CLA 在所有存储库中执行一次此操作。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目采用了</font></font><a href="https://opensource.microsoft.com/codeofconduct/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">微软开源行为准则</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。有关详细信息，请参阅</font></font><a href="https://opensource.microsoft.com/codeofconduct/faq/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">行为准则常见问题解答</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或联系</font></font><a href="mailto:opencode@microsoft.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">opencode@microsoft.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">提出任何其他问题或意见。</font></font></p>
+<div class="markdown-heading" dir="auto"><h1 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">商标</font></font></h1><a id="user-content-trademarks" class="anchor" aria-label="永久链接：商标" href="#trademarks"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目可能包含项目、产品或服务的商标或徽标。 Microsoft 商标或徽标的授权使用须遵守且必须遵循
+</font></font><a href="https://www.microsoft.com/en-us/legal/intellectualproperty/trademarks/usage/general" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Microsoft 的商标和品牌指南</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。在此项目的修改版本中使用 Microsoft 商标或徽标不得引起混淆或暗示 Microsoft 赞助。对第三方商标或徽标的任何使用均须遵守这些第三方的政策。</font></font></p>
+</article></div>
